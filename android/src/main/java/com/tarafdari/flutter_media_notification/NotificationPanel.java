@@ -100,6 +100,7 @@ public class NotificationPanel extends Service {
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setContentTitle(title)
                 .setColor(0xFF067F7B)
+                .setOngoing(true);
                 .setContentText(author)
 //                .setSubText(title)
                 .setContentIntent(selectPendingIntent);
@@ -135,8 +136,8 @@ public class NotificationPanel extends Service {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel serviceChannel = new NotificationChannel(
                     CHANNEL_ID,
-                    "Foreground Service Channel",
-                    NotificationManager.IMPORTANCE_LOW
+                    "Play Songs",
+                    NotificationManager.IMPORTANCE_HIGH
             );
             serviceChannel.setDescription("flutter_media_notification");
             serviceChannel.setShowBadge(false);
