@@ -138,7 +138,7 @@ public class NotificationPanel extends Service {
             NotificationChannel serviceChannel = new NotificationChannel(
                     CHANNEL_ID,
                     "Foreground Service Channel",
-                    NotificationManager.IMPORTANCE_MEDIUM
+                    NotificationManager.IMPORTANCE_DEFAULT
             );
             serviceChannel.setDescription("Play Songs");
             serviceChannel.setShowBadge(false);
