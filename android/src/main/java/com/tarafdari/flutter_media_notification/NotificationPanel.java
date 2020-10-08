@@ -97,10 +97,8 @@ public class NotificationPanel extends Service {
                 .setSmallIcon(R.drawable.logo)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setVibrate(new long[]{0L})
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setContentTitle(title)
-                .setOngoing(true)
-                .setAutoCancel(true)
                 .setColor(0xFF067F7B)
                 .setContentText(author)
 //                .setSubText(title)
@@ -140,7 +138,7 @@ public class NotificationPanel extends Service {
                     "Foreground Service Channel",
                     NotificationManager.IMPORTANCE_DEFAULT
             );
-            serviceChannel.setDescription("Play Songs");
+            serviceChannel.setDescription("Listen to music");
             serviceChannel.setShowBadge(false);
             serviceChannel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
 
@@ -152,9 +150,6 @@ public class NotificationPanel extends Service {
 
     @Override
     public void onTaskRemoved(Intent rootIntent) {
-        super.onTaskRemoved(rootIntent);
-    NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-    notificationManager.cancelAll();
         stopForeground(true);
     }
 
@@ -213,4 +208,3 @@ public class NotificationPanel extends Service {
         }
     }
 }
-
