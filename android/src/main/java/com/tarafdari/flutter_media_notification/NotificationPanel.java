@@ -100,6 +100,7 @@ public class NotificationPanel extends Service {
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setContentTitle(title)
                 .setOngoing(true)
+                setAutoCancel(true)
                 .setColor(0xFF067F7B)
                 .setContentText(author)
 //                .setSubText(title)
@@ -137,7 +138,7 @@ public class NotificationPanel extends Service {
             NotificationChannel serviceChannel = new NotificationChannel(
                     CHANNEL_ID,
                     "Foreground Service Channel",
-                    NotificationManager.IMPORTANCE_HIGH
+                    NotificationManager.IMPORTANCE_MEDIUM
             );
             serviceChannel.setDescription("Play Songs");
             serviceChannel.setShowBadge(false);
