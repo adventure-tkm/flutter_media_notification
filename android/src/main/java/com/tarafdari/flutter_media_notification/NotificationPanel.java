@@ -152,6 +152,9 @@ public class NotificationPanel extends Service {
 
     @Override
     public void onTaskRemoved(Intent rootIntent) {
+        super.onTaskRemoved(rootIntent);
+    NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+    notificationManager.cancelAll();
         stopForeground(true);
     }
 
