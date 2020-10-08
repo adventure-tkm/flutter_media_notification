@@ -97,7 +97,7 @@ public class NotificationPanel extends Service {
                 .setSmallIcon(R.drawable.logo)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setVibrate(new long[]{0L})
-                .setPriority(NotificationCompat.PRIORITY_MAX)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentTitle(title)
                 .setOngoing(true)
                 .setAutoCancel(true)
