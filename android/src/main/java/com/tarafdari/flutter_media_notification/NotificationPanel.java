@@ -99,6 +99,7 @@ public class NotificationPanel extends Service {
                 .setVibrate(new long[]{0L})
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setContentTitle(title)
+                .setOngoing(true)
                 .setColor(0xFF067F7B)
                 .setContentText(author)
 //                .setSubText(title)
@@ -136,9 +137,9 @@ public class NotificationPanel extends Service {
             NotificationChannel serviceChannel = new NotificationChannel(
                     CHANNEL_ID,
                     "Foreground Service Channel",
-                    NotificationManager.IMPORTANCE_LOW
+                    NotificationManager.IMPORTANCE_HIGH
             );
-            serviceChannel.setDescription("flutter_media_notification");
+            serviceChannel.setDescription("Play Songs");
             serviceChannel.setShowBadge(false);
             serviceChannel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
 
